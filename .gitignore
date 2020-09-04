@@ -1,8 +1,8 @@
-/node_modules
-/coverage
-/build
-/staticfiles
-/.vscode
+node_modules
+coverage
+build
+staticfiles
+.vscode
 
 *.pyc
 *.sqlite3
