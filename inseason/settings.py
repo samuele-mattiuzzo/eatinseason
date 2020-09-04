@@ -4,14 +4,12 @@ from pathlib import Path
 
 
 BASE_DIR = Path(__file__).resolve().parent.parent
-DEBUG = os.environ.get('DEBUG', True)
-SECRET_KEY = os.environ.get('SECRET_KEY', 'justadevkey')
+
 CONN_MAX_AGE = 600
-ALLOWED_HOSTS = [
-    'eatinseason.herokuapp.com',
-    '127.0.0.1',
-    'localhost'
-]
+DEBUG = os.environ.get('DEBUG', True)
+
+LLOWED_HOSTS = ['eatinseason.herokuapp.com', '127.0.0.1', 'localhost', '0.0.0.0:5000']
+SECRET_KEY = os.environ.get('SECRET_KEY', 'justadevkey')
 
 
 # Application definition
@@ -71,17 +69,14 @@ if DEBUG:
         }
     }
 else:
-    if 'DATABASE_URL' in os.environ:        DATABASES['default']= dj_database_url.c
-    onfig(conn_max_age=
+    if 'DATABASE_URL' in os.environ:
+        DATABASES['default']= dj_database_url.config(conn_max_age=CONN_MAX_AGE, ssl_require=True)
 
-#-validators
 
-A Passw
-# rd validatio
+# Password validation
+# https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
 
-# https://
-#docs.djangoproject.com/en/3.1/ref/settings/#auth-passworCONN_MAX_AGE, ssl_require=True)
-dUTH_PASSWORD_VALIDATORS = [
+AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
     },
