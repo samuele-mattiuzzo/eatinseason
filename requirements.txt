@@ -1,5 +1,6 @@
 asgiref==3.2.10
 coverage==5.2.1
+dj-database-url==0.5.0
 Django==3.1.1
 djangorestframework==3.11.1
 pytz==2020.1
