@@ -1,0 +1,1 @@
+import Seasonal from "./components/Seasonal";
